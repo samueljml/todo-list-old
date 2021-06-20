@@ -7,9 +7,8 @@ class User(db.Model):
     name = db.Column(db.String(80))
     task_id = db.relationship('Task', lazy='select',
         backref=db.backref('user', lazy='joined'))
-    
-    
-   
+
+
 
     def json(self):
         return{
